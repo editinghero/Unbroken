@@ -25,9 +25,7 @@ A minimalist fitness tracking app designed to help you maintain consistency in y
 - **Google Drive API** - Cloud data synchronization
 
 ## Screenshots
-![home](https://github.com/user-attachments/assets/95f1ab83-6804-46be-9f61-6e46a6a23ce6)
-![calendar](https://github.com/user-attachments/assets/2d703066-7b15-455a-b271-7d1ad79933ac)
-![stats](https://github.com/user-attachments/assets/8cb7fbff-c66d-44d4-8281-ad6e872fc3da)
+![home](https://github.com/user-attachments/assets/95f1ab83-6804-46be-9f61-6e46a6a23ce6) ![calendar](https://github.com/user-attachments/assets/2d703066-7b15-455a-b271-7d1ad79933ac) ![stats](https://github.com/user-attachments/assets/8cb7fbff-c66d-44d4-8281-ad6e872fc3da)
 
 
 
