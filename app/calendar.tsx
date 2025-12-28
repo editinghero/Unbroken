@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { BlurViewOptimized } from '@/components/BlurViewOptimized';
 import { colors } from '@/constants/colors';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Stack, router } from 'expo-router';
@@ -344,11 +343,7 @@ export default function CalendarScreen() {
         </ScrollView>
 
         <View style={[styles.bottomNavBar, { paddingBottom: insets.bottom + 12 }]}>
-          <BlurViewOptimized 
-            intensity={80} 
-            tint="dark" 
-            style={styles.bottomNavContent}
-          >
+          <View style={styles.bottomNavContent}>
             <TouchableOpacity
               style={styles.navButton}
               onPress={() => {
@@ -381,7 +376,7 @@ export default function CalendarScreen() {
               <TrendingUp size={20} color={colors.gold} strokeWidth={2} />
               <Text style={styles.navButtonText}>Stats</Text>
             </TouchableOpacity>
-          </BlurViewOptimized>
+          </View>
         </View>
       </SafeAreaView>
     </LinearGradient>
@@ -615,7 +610,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'rgba(18, 18, 18, 0.99)',
+    backgroundColor: 'rgba(18, 18, 18, 0.98)',
     borderTopWidth: 1,
     borderTopColor: 'rgba(203, 169, 129, 0.3)',
   },
