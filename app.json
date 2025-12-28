@@ -1,0 +1,93 @@
+{
+  "expo": {
+    "name": "Unbroken",
+    "slug": "unbroken-fitness",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/favicon/web-app-manifest-512x512.png",
+    "scheme": "unbroken",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/favicon/web-app-manifest-512x512.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.unbroken.fitness",
+      "buildNumber": "1",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "background-processing"
+        ],
+        "NSUserNotificationsUsageDescription": "This app uses notifications to remind you about your fitness check-ins."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/favicon/web-app-manifest-192x192.png",
+        "backgroundColor": "#0A0A0A"
+      },
+      "package": "com.unbroken.fitness",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.VIBRATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.WAKE_LOCK",
+        "android.permission.INTERNET"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "unbroken.fitness"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "navigationBar": {
+        "visible": "leanback"
+      },
+      "softwareKeyboardLayoutMode": "pan"
+    },
+    "web": {
+      "favicon": "./assets/favicon/favicon.ico",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://unbroken.fitness/"
+        }
+      ],
+      "expo-font",
+      "expo-web-browser",
+      [
+        "expo-notifications",
+        {
+          "color": "#CBA981"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": "https://unbroken.fitness/"
+      },
+      "eas": {
+        "projectId": "09b4e521-3dc7-4ff8-8ed5-1e75e7f3028f"
+      }
+    }
+  }
+}
