@@ -190,9 +190,9 @@ export default function StatsScreen() {
           )}
         </ScrollView>
 
-        <View style={[styles.bottomNavBar, { paddingBottom: insets.bottom + 16 }]}>
+        <View style={[styles.bottomNavBar, { paddingBottom: insets.bottom + 12 }]}>
           <BlurViewOptimized 
-            intensity={40} 
+            intensity={80} 
             tint="dark" 
             style={styles.bottomNavContent}
           >
@@ -200,10 +200,21 @@ export default function StatsScreen() {
               style={styles.navButton}
               onPress={() => {
                 hapticManager.triggerNavigation();
+                router.push('/');
+              }}
+            >
+              <Flame size={20} color={colors.gold} strokeWidth={2} />
+              <Text style={styles.navButtonText}>Home</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.navButton}
+              onPress={() => {
+                hapticManager.triggerNavigation();
                 router.push('/calendar');
               }}
             >
-              <CalendarIcon size={24} color={colors.gold} strokeWidth={2} />
+              <CalendarIcon size={20} color={colors.gold} strokeWidth={2} />
               <Text style={styles.navButtonText}>Calendar</Text>
             </TouchableOpacity>
             
@@ -214,7 +225,7 @@ export default function StatsScreen() {
                 router.push('/stats');
               }}
             >
-              <TrendingUp size={24} color={colors.gold} strokeWidth={2} />
+              <TrendingUp size={20} color={colors.gold} strokeWidth={2} />
               <Text style={styles.navButtonText}>Stats</Text>
             </TouchableOpacity>
           </BlurViewOptimized>
@@ -238,7 +249,7 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingHorizontal: 20,
     paddingTop: 20,
-    paddingBottom: 100,
+    paddingBottom: 180,
   },
   backButton: {
     width: 40,
@@ -401,29 +412,29 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'rgba(18, 18, 18, 0.98)',
+    backgroundColor: 'rgba(18, 18, 18, 0.99)',
     borderTopWidth: 1,
     borderTopColor: 'rgba(203, 169, 129, 0.3)',
   },
   bottomNavContent: {
     flexDirection: 'row',
     paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 20,
+    paddingTop: 16,
+    paddingBottom: 8,
   },
   navButton: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
+    paddingVertical: 10,
     marginHorizontal: 8,
-    borderRadius: 16,
+    borderRadius: 12,
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
   },
   navButtonText: {
     color: colors.text,
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '600' as const,
-    marginTop: 4,
+    marginTop: 3,
   },
 });

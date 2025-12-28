@@ -100,7 +100,7 @@ export default function HomeScreen() {
         );
         return;
       }
-      
+
       performRemoval();
       return;
     }
@@ -130,7 +130,7 @@ export default function HomeScreen() {
 
   const performRemoval = () => {
     const today = getCurrentLocalDateString();
-    
+
     Animated.sequence([
       Animated.timing(scaleAnim, {
         toValue: 0.95,
@@ -167,9 +167,8 @@ export default function HomeScreen() {
             <Text style={styles.headerTitle}>Unbroken</Text>
             <Text style={styles.headerSubtitle}>Stay consistent, stay strong</Text>
           </View>
+          <GoogleSyncButton size="small" showText={false} />
         </View>
-
-        <GoogleSyncButton size="small" />
 
         <ScrollView
           style={styles.scrollView}
@@ -362,10 +361,10 @@ export default function HomeScreen() {
           </View>
         </ScrollView>
 
-        <View style={[styles.bottomNavBar, { paddingBottom: insets.bottom + 16 }]}>
-          <BlurViewOptimized 
-            intensity={80} 
-            tint="dark" 
+        <View style={[styles.bottomNavBar, { paddingBottom: insets.bottom + 12 }]}>
+          <BlurViewOptimized
+            intensity={80}
+            tint="dark"
             style={styles.bottomNavContent}
           >
             <TouchableOpacity
@@ -375,7 +374,7 @@ export default function HomeScreen() {
                 router.push('/calendar');
               }}
             >
-              <Calendar size={24} color={colors.gold} strokeWidth={2} />
+              <Calendar size={20} color={colors.gold} strokeWidth={2} />
               <Text style={styles.navButtonText}>Calendar</Text>
             </TouchableOpacity>
 
@@ -386,7 +385,7 @@ export default function HomeScreen() {
                 router.push('/stats');
               }}
             >
-              <TrendingUp size={24} color={colors.gold} strokeWidth={2} />
+              <TrendingUp size={20} color={colors.gold} strokeWidth={2} />
               <Text style={styles.navButtonText}>Stats</Text>
             </TouchableOpacity>
           </BlurViewOptimized>
@@ -405,6 +404,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 16,
@@ -426,7 +428,7 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     paddingHorizontal: 20,
-    paddingBottom: 140,
+    paddingBottom: 180,
   },
   streakSection: {
     marginBottom: 24,
@@ -679,29 +681,29 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: 'rgba(18, 18, 18, 0.98)',
+    backgroundColor: 'rgba(18, 18, 18, 0.99)',
     borderTopWidth: 1,
     borderTopColor: 'rgba(203, 169, 129, 0.3)',
   },
   bottomNavContent: {
     flexDirection: 'row',
     paddingHorizontal: 20,
-    paddingTop: 20,
-    paddingBottom: 20,
+    paddingTop: 16,
+    paddingBottom: 8,
   },
   navButton: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
+    paddingVertical: 10,
     marginHorizontal: 8,
-    borderRadius: 16,
+    borderRadius: 12,
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
   },
   navButtonText: {
     color: colors.text,
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: '600' as const,
-    marginTop: 4,
+    marginTop: 3,
   },
 });

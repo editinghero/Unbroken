@@ -11,29 +11,47 @@ interface GoogleSyncButtonProps {
   onSyncComplete?: (success: boolean) => void;
 }
 
-export function GoogleSyncButton({ 
-  size = 'medium', 
+export function GoogleSyncButton({
+  size = 'medium',
   showText = true,
-  onSyncComplete 
+  onSyncComplete
 }: GoogleSyncButtonProps) {
-  const { isGoogleSignedIn, isSyncing, syncWithGoogle } = useGymCheckIns();
+  const { isGoogleSignedIn, isSyncing, syncWithGoogle, signInToGoogle } = useGymCheckIns();
   const hapticManager = HapticManager.getInstance();
 
-  const handleSync = async () => {
-    if (!isGoogleSignedIn || isSyncing) return;
-    
+  const handlePress = async () => {
+    if (isSyncing) return;
+
     hapticManager.triggerButton();
-    try {
-      const success = await syncWithGoogle();
-      if (success) {
-        hapticManager.triggerSuccess();
-      } else {
+
+    if (!isGoogleSignedIn) {
+      // Handle login
+      try {
+        const success = await signInToGoogle();
+        if (success) {
+          hapticManager.triggerSuccess();
+        } else {
+          hapticManager.triggerError();
+        }
+        onSyncComplete?.(success);
+      } catch {
         hapticManager.triggerError();
+        onSyncComplete?.(false);
       }
-      onSyncComplete?.(success);
-    } catch {
-      hapticManager.triggerError();
-      onSyncComplete?.(false);
+    } else {
+      // Handle sync
+      try {
+        const success = await syncWithGoogle();
+        if (success) {
+          hapticManager.triggerSuccess();
+        } else {
+          hapticManager.triggerError();
+        }
+        onSyncComplete?.(success);
+      } catch {
+        hapticManager.triggerError();
+        onSyncComplete?.(false);
+      }
     }
   };
 
@@ -58,10 +76,10 @@ export function GoogleSyncButton({
   const getText = () => {
     if (isSyncing) return 'Syncing...';
     if (isGoogleSignedIn) return 'Sync';
-    return 'Not Connected';
+    return 'Sign In';
   };
 
-  const isDisabled = !isGoogleSignedIn || isSyncing;
+  const isDisabled = isSyncing;
 
   return (
     <TouchableOpacity
@@ -71,7 +89,7 @@ export function GoogleSyncButton({
         isDisabled && styles.disabled,
         isGoogleSignedIn && styles.connected
       ]}
-      onPress={handleSync}
+      onPress={handlePress}
       disabled={isDisabled}
       activeOpacity={0.7}
     >

@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/favicon/web-app-manifest-512x512.png",
-    "scheme": "unbroken",
+    "scheme": "com.unbroken.fitness",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
