@@ -51,6 +51,15 @@
             }
           ],
           "category": ["BROWSABLE", "DEFAULT"]
+        },
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "com.unbroken.fitness"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
         }
       ],
       "navigationBar": {

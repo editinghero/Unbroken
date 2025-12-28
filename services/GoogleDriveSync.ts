@@ -6,7 +6,7 @@ import type { CheckIn, Holiday } from '@/types/checkin';
 const GOOGLE_CLIENT_ID = '54363970856-toq5tm5ooocbcgcau4gg0jol6gsggkni.apps.googleusercontent.com';
 const ENABLE_GOOGLE_SYNC = true; // Set to false to disable Google Drive sync completely
 const GOOGLE_REDIRECT_URI = AuthSession.makeRedirectUri({
-  useProxy: true,
+  scheme: 'com.unbroken.fitness',
 });
 const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/drive.file'];
 
