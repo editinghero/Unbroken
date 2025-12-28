@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Platform } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BlurViewOptimized } from '@/components/BlurViewOptimized';
 import { colors } from '@/constants/colors';
@@ -9,8 +9,6 @@ import { ChevronLeft, Check, Moon, Calendar, TrendingUp, ChevronRight } from 'lu
 import HapticManager from '@/services/HapticManager';
 import { useState } from 'react';
 import { getCurrentLocalDateString, getLocalDateString, createLocalDate } from '@/utils/dateUtils';
-
-const { width } = Dimensions.get('window');
 
 function getCalendarDays(year: number, month: number) {
   const firstDay = new Date(year, month, 1);

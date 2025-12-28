@@ -5,7 +5,7 @@ import type { CheckIn, Holiday } from '@/types/checkin';
 
 const GOOGLE_CLIENT_ID = '54363970856-toq5tm5ooocbcgcau4gg0jol6gsggkni.apps.googleusercontent.com';
 const ENABLE_GOOGLE_SYNC = true; // Set to false to disable Google Drive sync completely
-const GOOGLE_REDIRECT_URI = AuthSession.makeRedirectUri({ useProxy: true });
+const GOOGLE_REDIRECT_URI = AuthSession.makeRedirectUri();
 const GOOGLE_SCOPES = ['https://www.googleapis.com/auth/drive.file'];
 
 interface GoogleTokens {
@@ -27,7 +27,7 @@ class GoogleDriveSync {
   private readonly TOKENS_KEY = 'google_tokens';
   private readonly SYNC_FILE_NAME = 'unbroken_fitness_data.json';
 
-  private constructor() {}
+  private constructor() { }
 
   public static getInstance(): GoogleDriveSync {
     if (!GoogleDriveSync.instance) {
@@ -48,11 +48,6 @@ class GoogleDriveSync {
   }
 
   public async signIn(): Promise<boolean> {
-    if (GOOGLE_CLIENT_ID === 'YOUR_GOOGLE_CLIENT_ID') {
-      console.warn('Google Client ID not configured. Please update GOOGLE_CLIENT_ID in GoogleDriveSync.ts');
-      return false;
-    }
-
     try {
       const request = new AuthSession.AuthRequest({
         clientId: GOOGLE_CLIENT_ID,
@@ -62,7 +57,7 @@ class GoogleDriveSync {
         codeChallenge: await Crypto.digestStringAsync(
           Crypto.CryptoDigestAlgorithm.SHA256,
           'code_verifier',
-          { encoding: Crypto.CryptoEncoding.BASE64URL }
+          { encoding: Crypto.CryptoEncoding.BASE64 }
         ),
         codeChallengeMethod: AuthSession.CodeChallengeMethod.S256,
       });
@@ -288,7 +283,7 @@ class GoogleDriveSync {
   }> {
     try {
       const remoteData = await this.downloadData();
-      
+
       if (!remoteData) {
         const uploaded = await this.uploadData(localCheckIns, localHolidays);
         return {
@@ -320,7 +315,7 @@ class GoogleDriveSync {
 
   private mergeCheckIns(local: CheckIn[], remote: CheckIn[]): CheckIn[] {
     const merged = new Map<string, CheckIn>();
-    
+
     [...local, ...remote].forEach(checkIn => {
       const existing = merged.get(checkIn.date);
       if (!existing || checkIn.timestamp > existing.timestamp) {
@@ -328,14 +323,14 @@ class GoogleDriveSync {
       }
     });
 
-    return Array.from(merged.values()).sort((a, b) => 
+    return Array.from(merged.values()).sort((a, b) =>
       new Date(b.date).getTime() - new Date(a.date).getTime()
     );
   }
 
   private mergeHolidays(local: Holiday[], remote: Holiday[]): Holiday[] {
     const merged = new Map<string, Holiday>();
-    
+
     [...local, ...remote].forEach(holiday => {
       const existing = merged.get(holiday.date);
       if (!existing || holiday.timestamp > existing.timestamp) {
@@ -343,7 +338,7 @@ class GoogleDriveSync {
       }
     });
 
-    return Array.from(merged.values()).sort((a, b) => 
+    return Array.from(merged.values()).sort((a, b) =>
       new Date(b.date).getTime() - new Date(a.date).getTime()
     );
   }

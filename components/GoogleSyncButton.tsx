@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Platform } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Cloud, CloudOff, RefreshCw } from 'lucide-react-native';
 import { colors } from '@/constants/colors';
 import { useGymCheckIns } from '@/contexts/GymCheckInContext';
@@ -31,7 +31,7 @@ export function GoogleSyncButton({
         hapticManager.triggerError();
       }
       onSyncComplete?.(success);
-    } catch (error) {
+    } catch {
       hapticManager.triggerError();
       onSyncComplete?.(false);
     }

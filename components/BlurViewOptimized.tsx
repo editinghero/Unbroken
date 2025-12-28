@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, View, ViewStyle } from 'react-native';
+import { View, ViewStyle } from 'react-native';
 
 interface BlurViewOptimizedProps {
   intensity?: number;

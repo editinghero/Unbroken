@@ -169,7 +169,7 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        <GoogleSyncButton size="small" position="corner" />
+        <GoogleSyncButton size="small" />
 
         <ScrollView
           style={styles.scrollView}
