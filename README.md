@@ -4,7 +4,7 @@ A minimalist fitness tracking app designed to help you maintain consistency in y
 
 **Download**: [Latest Release](https://github.com/editinghero/unbroken/releases)
 
-""Preview**: [Website](https://unbroken--45sbosebzy.expo.app/)
+**Preview**: [Website](https://unbroken--45sbosebzy.expo.app/)
 
 ## Features
 
