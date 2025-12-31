@@ -32,6 +32,7 @@
         "foregroundImage": "./assets/favicon/web-app-manifest-192x192.png",
         "backgroundColor": "#0A0A0A"
       },
+      "googleServicesFile": "./google-services.json",
       "package": "com.unbroken.fitness",
       "versionCode": 1,
       "permissions": [
@@ -50,7 +51,10 @@
               "host": "your-domain.com"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         },
         {
           "action": "VIEW",
@@ -59,16 +63,16 @@
               "scheme": "com.unbroken.fitness"
             }
           ],
-          "category": ["BROWSABLE", "DEFAULT"]
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ],
-      "navigationBar": {
-        "visible": "leanback"
-      },
       "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
-      "favicon": "./assets/favicon/favicon.ico",
+      "favicon": "./assets/favicon/web-app-manifest-192x192.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -79,7 +83,6 @@
         }
       ],
       "expo-font",
-      "expo-web-browser",
       [
         "expo-notifications",
         {
@@ -97,6 +100,7 @@
       "eas": {
         "projectId": "09b4e521-3dc7-4ff8-8ed5-1e75e7f3028f"
       }
-    }
+    },
+    "owner": "astralquarks"
   }
 }

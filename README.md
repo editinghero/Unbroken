@@ -10,7 +10,9 @@ A minimalist fitness tracking app designed to help you maintain consistency in y
 - **Streak Tracking**: Monitor current and best streaks
 - **Statistics**: Comprehensive weekly and monthly performance metrics
 - **Holiday Management**: Exclude holidays from streak calculations
-- **Google Drive Sync**: Backup and sync data across devices
+- **Firebase Sync**: Secure cloud backup and sync across devices
+- **Email Authentication**: Simple email/password sign up and sign in
+- **Offline Support**: Works offline with automatic sync when online
 - **Dark Theme**: Beautiful dark interface with gold accents
 - **Haptic Feedback**: Enhanced user experience with tactile responses
 
@@ -21,8 +23,8 @@ A minimalist fitness tracking app designed to help you maintain consistency in y
 - **TypeScript** - Type-safe JavaScript
 - **React Query** - Data fetching and state management
 - **Expo Router** - File-based navigation
-- **AsyncStorage** - Local data persistence
-- **Google Drive API** - Cloud data synchronization
+- **Firebase** - Authentication and real-time database
+- **AsyncStorage** - Local data persistence and offline support
 
 ## Screenshots
 <table>
@@ -54,7 +56,11 @@ A minimalist fitness tracking app designed to help you maintain consistency in y
    npm install
    ```
 
-3. **Start the development server**
+3. **Set up Firebase** (Required for authentication and sync)
+   - Create a Firebase project with Authentication and Firestore
+   - Create a `.env` file in the root directory based on `.env.example` and fill in your Firebase configuration
+
+4. **Start the development server**
    ```bash
    npm start
    ```
@@ -85,10 +91,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Privacy
 
-- All data is stored locally on your device
-- Google Drive sync is optional and uses your personal Google Drive
+- All data is stored locally on your device with offline support
+- Firebase sync is optional and requires user authentication
+- Data is securely stored in your personal Firebase project
 - No analytics or tracking is implemented
 - No personal data is collected by the app developers
+- Users have full control over their data and can delete their account anytime
 
 ## Support
 

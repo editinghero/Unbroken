@@ -1,9 +1,21 @@
 {
   "cli": {
-    "version": ">= 3.6.9"
+    "version": ">= 3.6.9",
+    "appVersionSource": "remote"
   },
   "build": {
+    "base": {
+      "env": {
+        "EXPO_PUBLIC_FIREBASE_API_KEY": "@expo_public_firebase_api_key",
+        "EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN": "@expo_public_firebase_auth_domain",
+        "EXPO_PUBLIC_FIREBASE_PROJECT_ID": "@expo_public_firebase_project_id",
+        "EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET": "@expo_public_firebase_storage_bucket",
+        "EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID": "@expo_public_firebase_messaging_sender_id",
+        "EXPO_PUBLIC_FIREBASE_APP_ID": "@expo_public_firebase_app_id"
+      }
+    },
     "development": {
+      "extends": "base",
       "developmentClient": true,
       "distribution": "internal",
       "android": {
@@ -12,6 +24,7 @@
       }
     },
     "preview": {
+      "extends": "base",
       "distribution": "internal",
       "android": {
         "buildType": "apk",
@@ -19,6 +32,7 @@
       }
     },
     "preview-apk": {
+      "extends": "base",
       "distribution": "internal",
       "android": {
         "buildType": "apk",
@@ -26,12 +40,14 @@
       }
     },
     "production": {
+      "extends": "base",
       "android": {
         "buildType": "app-bundle",
         "gradleCommand": ":app:bundleRelease"
       }
     },
     "production-apk": {
+      "extends": "base",
       "distribution": "internal",
       "android": {
         "buildType": "apk",

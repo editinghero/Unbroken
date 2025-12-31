@@ -17,10 +17,20 @@ export function getWeekBoundaries(date: Date): WeekBoundaries {
   const endDate = new Date(startDate);
   endDate.setDate(startDate.getDate() + 6);
   
+  // Calculate actual working days (excluding Sundays)
+  let workingDays = 0;
+  for (let i = 0; i <= 6; i++) {
+    const checkDate = new Date(startDate);
+    checkDate.setDate(startDate.getDate() + i);
+    if (checkDate.getDay() !== 0) { // Not Sunday
+      workingDays++;
+    }
+  }
+  
   return {
     startDate,
     endDate,
-    workingDays: 6,
+    workingDays,
   };
 }
 

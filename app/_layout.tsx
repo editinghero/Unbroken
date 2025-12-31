@@ -21,18 +21,19 @@ const queryClient = new QueryClient({
 
 function RootLayoutNav() {
   return (
-    <Stack screenOptions={{ 
+    <Stack screenOptions={{
       headerBackTitle: "Back",
       headerStyle: {
         backgroundColor: colors.background,
       },
       headerTintColor: colors.text,
+      animation: 'none',
     }}>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="calendar" options={{ headerShown: false }} />
-      <Stack.Screen name="stats" options={{ headerShown: false }} />
-      <Stack.Screen name="settings" options={{ headerShown: false }} />
-      <Stack.Screen name="+not-found" options={{ title: "Not Found" }} />
+      <Stack.Screen name="index" options={{ headerShown: false, animation: 'none' }} />
+      <Stack.Screen name="calendar" options={{ headerShown: false, animation: 'none' }} />
+      <Stack.Screen name="stats" options={{ headerShown: false, animation: 'none' }} />
+      <Stack.Screen name="settings" options={{ headerShown: false, animation: 'none' }} />
+      <Stack.Screen name="+not-found" options={{ title: "Not Found", animation: 'none' }} />
     </Stack>
   );
 }
