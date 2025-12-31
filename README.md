@@ -4,9 +4,10 @@ A minimalist tracking app designed to help you maintain consistency in your dial
 
 Can be used to track daily gym,study,your coding practice, extra 
 
-**Download**: [Latest Release](https://github.com/editinghero/unbroken/releases)
+**Download**: [Latest Release - Android](https://github.com/editinghero/unbroken/releases)
 
 **Preview**: [Website](https://unbroken.expo.app/)
+(just for demo for real experience install android app)
 
 ## Features
 
