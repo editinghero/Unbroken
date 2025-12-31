@@ -1,6 +1,8 @@
-# Unbroken Fitness
+# Unbroken
 
-A minimalist fitness tracking app designed to help you maintain consistency in your gym routine. Track your daily check-ins, build streaks, and stay motivated with clean, intuitive design.
+A minimalist tracking app designed to help you maintain consistency in your dialy routine. Track your daily check-ins, build streaks, and stay motivated with clean, intuitive design.
+
+Can be used to track daily gym,study,your coding practice, extra 
 
 **Download**: [Latest Release](https://github.com/editinghero/unbroken/releases)
 
@@ -8,7 +10,7 @@ A minimalist fitness tracking app designed to help you maintain consistency in y
 
 ## Features
 
-- **Daily Check-ins**: Simple one-tap gym visit logging
+- **Daily Check-ins**: Simple one-tap visit logging
 - **Streak Tracking**: Monitor current and best streaks
 - **Statistics**: Comprehensive weekly and monthly performance metrics
 - **Holiday Management**: Exclude holidays from streak calculations
