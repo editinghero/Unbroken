@@ -2,7 +2,7 @@
 
 A minimalist tracking app designed to help you maintain consistency in your dialy routine. Track your daily check-ins, build streaks, and stay motivated with clean, intuitive design.
 
-Can be used to track daily gym,study,your coding practice, extra 
+Can be used to track daily gym,study,your coding practice, extra.
 
 **Download**: [Latest Release - Android](https://github.com/editinghero/unbroken/releases)
 
@@ -34,9 +34,9 @@ Can be used to track daily gym,study,your coding practice, extra
 ## Screenshots
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/95f1ab83-6804-46be-9f61-6e46a6a23ce6" alt="home" width="250"/></td>
-    <td><img src="https://github.com/user-attachments/assets/2d703066-7b15-455a-b271-7d1ad79933ac" alt="calendar" width="250"/></td>
-    <td><img src="https://github.com/user-attachments/assets/8cb7fbff-c66d-44d4-8281-ad6e872fc3da" alt="stats" width="250"/></td>
+    <td><img src="https://github.com/user-attachments/assets/53715ffd-16ee-4445-aa65-28f91015cac7" alt="home" width="250"/></td>
+    <td><img src="https://github.com/user-attachments/assets/1d48df64-987c-4f8f-a049-1a6f0193aa26" alt="calendar" width="250"/></td>
+    <td><img src="https://github.com/user-attachments/assets/5df6fbbf-4bb4-4a0f-af1b-c1eba4d10eea" alt="stats" width="250"/></td>
   </tr>
 </table>
 
